@@ -133,7 +133,7 @@ resetGame();
 * Beginner-friendly code
 
 
-## 📷 Screenshot (Optional)
+## 📷 Screenshot
 
 ![alt text](image.png)
 
