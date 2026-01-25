@@ -1,9 +1,9 @@
-# Tic-Tac-Toe
 # 🎮 Tic Tac Toe Game
 
-A simple **Tic Tac Toe** game built using **HTML, CSS, and JavaScript**. This project is beginner-friendly and helps understand DOM manipulation, event handling, and basic game logic.
+A simple and interactive **Tic Tac Toe** game built using **HTML, CSS, and JavaScript**.  
+This beginner-friendly project helps you understand **DOM manipulation**, **event handling**, and **basic game logic** in JavaScript.
 
-you can also visit to:
+Live Demo:  
 https://jaivpatel07.github.io/Tic-Tac-Toe/
 
 ---
@@ -23,7 +23,7 @@ Tic-Tac-Toe/
 ## 🚀 How to Run the Project
 
 1. Download or clone this repository
-2. Make sure all files are in the **same folder**
+2. Make sure all files are in the same folder
 3. Open `index.html` in any modern web browser
 4. Start playing 🎉
 
@@ -31,25 +31,21 @@ Tic-Tac-Toe/
 
 ## 🕹️ How to Play
 
-* The game is played on a **3×3 grid**
-* Player **X** starts first
-* Players take turns clicking on empty cells
-* First player to align **3 symbols** (row, column, or diagonal) wins
-* If all cells are filled and no one wins → **Draw**
+- The game is played on a 3×3 grid
+- Player X starts first
+- Players take turns clicking on empty cells
+- The first player to align 3 symbols (row, column, or diagonal) wins
+- If all cells are filled and no one wins → Draw
 
 ---
 
-## 🧠 Game Logic Explanation (Simple)
+## 🧠 Game Logic Explanation
 
-### 1️⃣ Board Representation
-
-The board is stored in a JavaScript array:
+### Board Representation
 
 ```js
 let board = ["", "", "", "", "", "", "", "", ""];
 ```
-
-Each index represents one cell:
 
 ```
 0 | 1 | 2
@@ -59,60 +55,45 @@ Each index represents one cell:
 
 ---
 
-### 2️⃣ Player Turn Handling
+### Player Turn Handling
 
 ```js
 let currentPlayer = "X";
-```
-
-After every move:
-
-```js
 currentPlayer = currentPlayer === "X" ? "O" : "X";
 ```
 
 ---
 
-### 3️⃣ Cell Click Logic
+### Cell Click Logic
 
-* Detect which cell is clicked using `data-index`
-* Prevent clicking on filled cells
-* Store the move in the board array
-* Display `X` or `O` on the screen
+- Detect clicked cell using `data-index`
+- Prevent clicking on filled cells
+- Store the move in the board array
+- Display X or O on the UI
 
 ---
 
-### 4️⃣ Winning Logic
-
-Winning combinations are predefined:
+### Winning Logic
 
 ```js
 const winPatterns = [
-  [0,1,2],[3,4,5],[6,7,8],
-  [0,3,6],[1,4,7],[2,5,8],
-  [0,4,8],[2,4,6]
+  [0,1,2], [3,4,5], [6,7,8],
+  [0,3,6], [1,4,7], [2,5,8],
+  [0,4,8], [2,4,6]
 ];
 ```
 
-Each time a move is made, the game checks if any pattern matches.
-
 ---
 
-### 5️⃣ Draw Condition
-
-If all cells are filled and no winner is found:
+### Draw Condition
 
 ```js
 if (!board.includes(""))
 ```
 
-The game ends in a draw.
-
 ---
 
-### 6️⃣ Restart Game
-
-The **Restart** button clears the board and starts a new game:
+### Restart Game
 
 ```js
 resetGame();
@@ -122,24 +103,27 @@ resetGame();
 
 ## 🛠️ Technologies Used
 
-* HTML5
-* CSS
-* JavaScript (DOM, Events)
+- HTML5
+- CSS
+- JavaScript
 
 ---
 
 ## 🌟 Features
 
-* Two-player mode (X vs O)
-* Win & draw detection
-* Restart game button
-* Beginner-friendly code
+- Two-player mode (X vs O)
+- Win & draw detection
+- Restart button
+- Beginner-friendly code
 
+---
 
 ## 📷 Screenshot
 
-![alt text](image.png)
+![Tic Tac Toe Screenshot](image.png)
+
+---
 
 ## 👨‍💻 Author
 
-Created by **Jaiv Patel**
+Jaiv Patel
