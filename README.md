@@ -3,6 +3,9 @@
 
 A simple **Tic Tac Toe** game built using **HTML, CSS, and JavaScript**. This project is beginner-friendly and helps understand DOM manipulation, event handling, and basic game logic.
 
+you can also visit to:
+https://jaivpatel07.github.io/Tic-Tac-Toe/
+
 ---
 
 ## 📂 Project Structure
