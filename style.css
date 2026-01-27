@@ -1,4 +1,4 @@
-body {
+/* body {
     text-align: center;
     background-image: radial-gradient(rgb(21,21,69), rgb(13,13,44), rgb(9,9,32), rgb(5,5,17));
     min-height: 100vh;
@@ -65,4 +65,105 @@ button {
 
 button:hover {
     background-color: #a3d1ff;
+} */
+:root {
+    --cell-size: 100px;
+    --gap-size: 12px;
 }
+
+body {
+    text-align: center;
+    background-image: radial-gradient(
+        rgb(21,21,69),
+        rgb(13,13,44),
+        rgb(9,9,32),
+        rgb(5,5,17)
+    );
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: clamp(28px, 6vw, 48px);
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, var(--cell-size));
+    gap: var(--gap-size);
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: #cbe8ff;
+    font-size: calc(var(--cell-size) * 0.6);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: black;
+    border-radius: 12px;
+}
+
+.cell:hover {
+    background-color: #a3d1ff;
+}
+
+.cell.win {
+    background-color: #7dd3fc;
+}
+
+#status {
+    font-size: clamp(16px, 4vw, 22px);
+    margin-top: 15px;
+}
+
+button {
+    border-radius: 20px;
+    background-color: #cbe8ff;
+    padding: 10px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 3px solid black;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #a3d1ff;
+}
+
+@media (max-width: 480px) {
+    :root {
+        --cell-size: 80px;
+        --gap-size: 8px;
+    }
+
+    button {
+        width: 90%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --cell-size: 70px;
+    }
+}
+
