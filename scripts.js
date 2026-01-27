@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cells = document.querySelectorAll(".cell");
     const statusText = document.getElementById("status");
     const modeButton = document.getElementById("mode");
-
+    const restartBtn = document.getElementById("restartBtn");
     const HUMAN = "X";
     const AI = "O";
 
@@ -29,28 +29,29 @@ document.addEventListener("DOMContentLoaded", () => {
             currentMode = "pvp";
             modeButton.textContent = "Switch to AI";
         }
-        window.resetGame();
+        resetGame();
     });
 
     cells.forEach(cell => cell.addEventListener("click", handleClick));
-    function handleClick(e) {
-    const index = e.target.dataset.index;
-    if (board[index] !== "" || !gameActive) return;
-    if (currentMode === "pvp") {
-        makeMove(index, currentPlayer);
-        return;
-    }
-    if (currentMode === "ai") {
-        makeMove(index, HUMAN);
+    restartBtn.addEventListener("click", resetGame);
 
-        if (gameActive) {
-            setTimeout(() => {
-                let bestMove = getBestMove();
-                makeMove(bestMove, AI);
-            }, 400);
+    function handleClick(e) {
+        const index = e.target.dataset.index;
+        if (board[index] !== "" || !gameActive) return;
+    
+        if (currentMode === "pvp") {
+            makeMove(index, currentPlayer);
+        } else { // AI mode
+            makeMove(index, HUMAN);
+    
+            if (gameActive) {
+                setTimeout(() => {
+                    let bestMove = getBestMove();
+                    makeMove(bestMove, AI);
+                }, 400);
+            }
         }
     }
-}
 
 
     function makeMove(index, player) {
@@ -145,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return move;
     }
 
-    window.resetGame = function () {
+    function resetGame() {
         board = ["", "", "", "", "", "", "", "", ""];
         currentPlayer = HUMAN;
         gameActive = true;
@@ -156,6 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         document.body.classList.add('turn-x');
         document.body.classList.remove('turn-o');
-    };
+    }
 
 });
