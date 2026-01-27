@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function handleClick(e) {
         const index = e.target.dataset.index;
-        if (board[index] !== "" || !gameActive) return;
-    
+        if (board[index] !== "" || !gameActive)
+            return;
         if (currentMode === "pvp") {
             makeMove(index, currentPlayer);
-        } else { // AI mode
+        } else {
             makeMove(index, HUMAN);
     
             if (gameActive) {
@@ -100,9 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function minimax(boardState, depth, isMaximizing) {
         let score = evaluate(boardState);
 
-        if (score === 10) return score - depth;
-        if (score === -10) return score + depth;
-        if (!boardState.includes("")) return 0;
+        if (score === 10) 
+            return score - depth;
+        if (score === -10) 
+            return score + depth;
+        if (!boardState.includes("")) 
+            return 0;
 
         if (isMaximizing) {
             let best = -Infinity;
