@@ -1,4 +1,4 @@
-# 🎮 Tic Tac Toe Game (PvP & Smart AI)
+# 🎮 Tic Tac Toe Game (PvP & VS AI)
 
 An interactive **Tic Tac Toe** game built using **HTML, CSS, and JavaScript**, featuring both **Player vs Player** and **Player vs AI** modes.
 
